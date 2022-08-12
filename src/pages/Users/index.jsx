@@ -1,18 +1,13 @@
-import { useEffect } from "react";
-import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import api from "../../api";
+import { Container } from "@mui/material";
+import useContacts from "../../hooks/useContacts";
 
 export default function Users() {
-  const [contacts, setContacts] = useState([]);
-
-  useEffect(() => {
-    api.get().then((resp) => setContacts(resp.data));
-  }, []);
+  const { contacts, setContacts, deleteContact } = useContacts();
 
   return (
-    <div>
-      <Outlet context={contacts} />
-    </div>
+    <Container fixed>
+      <Outlet context={{ contacts, deleteContact }} />
+    </Container>
   );
 }

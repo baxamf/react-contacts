@@ -1,16 +1,21 @@
 import { Link, useOutletContext } from "react-router-dom";
+import { Container, Button, Stack } from "@mui/material";
 import User from "../User";
 
 export default function UsersList() {
-  const contacts = useOutletContext();
+  const { contacts, deleteContact } = useOutletContext();
+
   return (
-    <div>
-      <Link to="create">Create</Link>
-      <ul>
+    <Container>
+      <Button variant="text">
+        <Link to="create">Create</Link>
+      </Button>
+
+      <Stack spacing={2} alignItems="center">
         {contacts.map((contact) => (
-          <User key={contact.id} {...contact} />
+          <User key={contact.id} contact={contact} onRemove={deleteContact} />
         ))}
-      </ul>
-    </div>
+      </Stack>
+    </Container>
   );
 }

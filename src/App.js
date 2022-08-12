@@ -1,11 +1,14 @@
 import "./App.css";
+import { Container, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Link to="/users">Users</Link>
-    </div>
+    <Container fixed>
+      <Button variant="contained">
+        <Link to="/users">Users</Link>
+      </Button>
+    </Container>
   );
 }
 
