@@ -11,9 +11,8 @@ export default function useContacts() {
 
   const deleteContact = (id) => {
     DBQueries.deleteContact(id).then(() => {
-      setContacts((prev) => {
-        prev.filter((contact) => contact.id !== id);
-      });
+      const update = contacts.filter((contact) => contact.id !== id);
+      setContacts(update);
     });
   };
 
