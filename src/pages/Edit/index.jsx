@@ -1,6 +1,16 @@
-import { useParams } from "react-router-dom";
+import { useParams, useOutletContext } from "react-router-dom";
+import Form from "../../components/Form";
 
 export default function EditUser() {
-  let { id } = useParams();
-  return <div>Edit User {id}</div>;
+  const { contacts, addContact } = useOutletContext();
+  const { id } = useParams();
+  const contact = contacts.find((contact) => contact.id === id);
+
+  return (
+    <Form
+      addContact={addContact}
+      contact={contact}
+      title={`Edit ${contact.name}s contact`}
+    />
+  );
 }

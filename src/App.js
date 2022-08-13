@@ -1,12 +1,34 @@
 import "./App.css";
-import { Container, Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Container, Button, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 
 function App() {
+  const navigate = useNavigate();
   return (
-    <Container fixed>
-      <Button variant="contained">
-        <Link to="/users">Users</Link>
+    <Container
+      sx={{
+        minHeight: "100vh",
+        display: "grid",
+        padding: "2rem",
+        placeContent: "center",
+        justifyItems: "center",
+        textAlign: "center",
+      }}
+    >
+      <Typography variant="h3" component="h3" sx={{ color: "primary.main" }}>
+        Click button bellow
+        <br /> to see list of contacts
+      </Typography>
+      <KeyboardDoubleArrowDownIcon
+        sx={{ fontSize: 50, margin: 5, color: "primary.main" }}
+      />
+      <Button
+        variant="contained"
+        size="large"
+        onClick={() => navigate("/users")}
+      >
+        Users
       </Button>
     </Container>
   );

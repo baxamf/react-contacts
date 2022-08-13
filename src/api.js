@@ -1,6 +1,5 @@
 import axios from "axios";
-
-const URL = "https://62d926c290883139359c0527.mockapi.io/users";
+import { URL } from "./constants";
 
 export default axios.create({
   baseURL: URL,

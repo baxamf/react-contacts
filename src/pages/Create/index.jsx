@@ -1,3 +1,8 @@
+import { useOutletContext, useNavigate } from "react-router-dom";
+import Form from "../../components/Form";
+
 export default function CreateUser() {
-  return <div>Create User</div>;
+  const { addContact } = useOutletContext();
+
+  return <Form addContact={addContact} title="Create new contact" />;
 }

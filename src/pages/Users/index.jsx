@@ -1,13 +1,23 @@
 import { Outlet } from "react-router-dom";
-import { Container } from "@mui/material";
+import { Grid } from "@mui/material";
 import useContacts from "../../hooks/useContacts";
 
 export default function Users() {
-  const { contacts, setContacts, deleteContact } = useContacts();
+  const { contacts, setContacts, deleteContact, addContact } = useContacts();
 
   return (
-    <Container fixed>
-      <Outlet context={{ contacts, deleteContact }} />
-    </Container>
+    <Grid
+      container
+      spacing={2}
+      direction="column"
+      justifyContent="center"
+      alignItems="center"
+      sx={{
+        padding: 5,
+        gap: 5,
+      }}
+    >
+      <Outlet context={{ contacts, deleteContact, addContact }} />
+    </Grid>
   );
 }

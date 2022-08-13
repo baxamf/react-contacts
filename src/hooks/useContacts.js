@@ -1,5 +1,4 @@
-import { useCallback, useEffect } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import DBQueries from "../services";
 
 export default function useContacts() {
@@ -16,5 +15,19 @@ export default function useContacts() {
     });
   };
 
-  return { contacts, setContacts, deleteContact };
+  const addContact = (newContact) => {
+    if (newContact.id) {
+      DBQueries.editContact(newContact).then((data) => {
+        setContacts(
+          contacts.map((contact) => (contact.id === data.id ? data : contact))
+        );
+      });
+    } else {
+      DBQueries.addContact(newContact).then((data) =>
+        setContacts([...contacts, data])
+      );
+    }
+  };
+
+  return { contacts, setContacts, deleteContact, addContact };
 }
