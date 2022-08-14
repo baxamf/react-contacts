@@ -1,12 +1,10 @@
-import { useEffect, useMemo, useState } from "react";
 import { useParams, useOutletContext } from "react-router-dom";
 import Form from "../../components/Form";
-import useContact from "../../hooks/useContact";
 
 export default function EditUser() {
-  const { addContact } = useOutletContext();
+  const { contacts, addContact } = useOutletContext();
   const { id } = useParams();
-  const contact = useContact(id);
+  const contact = contacts.find((contact) => contact.id === id);
 
   return (
     contact && (

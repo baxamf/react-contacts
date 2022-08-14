@@ -2,7 +2,7 @@ import { TextField, Box, Typography, Button } from "@mui/material/";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import SaveIcon from "@mui/icons-material/Save";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const emptyUser = {

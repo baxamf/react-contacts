@@ -14,6 +14,7 @@ export default function ContactsRouter() {
         <Route path=":id" element={<EditUser />} />
         <Route path="create" element={<CreateUser />} />
       </Route>
+      <Route path="*" element={<App />} />
     </Routes>
   );
 }
