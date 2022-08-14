@@ -18,12 +18,14 @@ function App() {
     >
       <Typography variant="h3" component="h3" sx={{ color: "primary.main" }}>
         Click button bellow
-        <br /> to see list of contacts
+        <br />
+        to see list of contacts
       </Typography>
       <KeyboardDoubleArrowDownIcon
         sx={{ fontSize: 50, margin: 5, color: "primary.main" }}
       />
       <Button
+        sx={{ padding: ".75rem 2rem" }}
         variant="contained"
         size="large"
         onClick={() => navigate("/users")}

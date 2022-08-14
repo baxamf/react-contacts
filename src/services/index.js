@@ -5,6 +5,9 @@ export default class DBQueries {
   static getContacts() {
     return api.get(CONTACTS_URI).then((resp) => resp.data);
   }
+  static getContact(id) {
+    return api.get(CONTACTS_URI + "/" + id).then((resp) => resp.data);
+  }
   static deleteContact(id) {
     return api.delete(CONTACTS_URI + "/" + id).then((resp) => resp.data);
   }

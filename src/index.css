@@ -10,7 +10,7 @@ body {
   font-family: Consolas;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(to top, #9cd3d8, #f2f2f2);
+  background: linear-gradient(45deg, #9cd3d8, #f2f2f2);
 }
 
 a {

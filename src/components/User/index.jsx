@@ -16,13 +16,15 @@ export default function User({ contact, onRemove }) {
   return (
     <Card
       sx={{
-        minWidth: 400,
-        padding: 4,
+        display: "grid",
+        gap: "1.5rem",
+        minWidth: 430,
+        padding: "2rem 4rem",
         backgroundColor: "#f2f2f2",
         boxShadow: "0 0 30px rgba(0,0,0,.2)",
       }}
     >
-      <CardContent>
+      <CardContent sx={{ padding: 0 }}>
         <Typography variant="h5" fontWeight="bold" mb={1}>
           {name}
           <br />
@@ -32,7 +34,7 @@ export default function User({ contact, onRemove }) {
           {phone}
         </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions sx={{ padding: 0, gap: ".25rem" }}>
         <Button
           variant="contained"
           startIcon={<EditIcon />}

@@ -3,7 +3,7 @@ import { Grid } from "@mui/material";
 import useContacts from "../../hooks/useContacts";
 
 export default function Users() {
-  const { contacts, setContacts, deleteContact, addContact } = useContacts();
+  const { contacts, deleteContact, addContact } = useContacts();
 
   return (
     <Grid

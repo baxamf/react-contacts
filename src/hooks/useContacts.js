@@ -29,5 +29,5 @@ export default function useContacts() {
     }
   };
 
-  return { contacts, setContacts, deleteContact, addContact };
+  return { contacts, deleteContact, addContact };
 }

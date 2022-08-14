@@ -2,18 +2,18 @@ import { TextField, Box, Typography, Button } from "@mui/material/";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import SaveIcon from "@mui/icons-material/Save";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const interfaceUser = {
+const emptyUser = {
   name: "",
   surname: "",
   phone: "",
 };
 
 export default function Form({ addContact, title, contact }) {
-  const [newUser, setNewUser] = useState(contact ? contact : interfaceUser);
-  let navigate = useNavigate();
+  const [newUser, setNewUser] = useState(contact ? contact : emptyUser);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setNewUser({ ...newUser, [e.target.name]: e.target.value });
@@ -44,7 +44,12 @@ export default function Form({ addContact, title, contact }) {
 
   return (
     <>
-      <Typography variant="h3" component="h3" sx={{ color: "primary.main" }}>
+      <Typography
+        variant="h3"
+        component="h3"
+        color="primary.main"
+        fontWeight="bold"
+      >
         {title}
       </Typography>
       <Box
